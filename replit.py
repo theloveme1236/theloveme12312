@@ -267,6 +267,7 @@ def failed_success_minutes():
         print('failed_success_minutes:  ',ssssd2)
 def Subscribe_erroo():
     global driver
+    global con_sub
     failed_success_minutes()
     limeit_all_ike4like()
     driver.switch_to.window(driver.window_handles[0])
@@ -289,7 +290,7 @@ def Subscribe_erroo():
         like()
 def Subscribe():
     global driver
-    
+    global con_sub
     driver.get("https://www.like4like.org/earn-credits.php?feature=youtubes")
     con_sub = 0
     for s in range(40004000):
@@ -346,10 +347,11 @@ def Subscribe():
         except Exception as s2:
             print('Subscribe_erroo:   ',s2)
             driver.save_screenshot('erro_sub_{}.png'.format(s))
-            Subscribe_erroo(driver)
+            Subscribe_erroo()
 
 def like_erro():
     global driver
+    global con_like
     limeit_all_ike4like()
     failed_success_minutes()
     try:
@@ -378,6 +380,7 @@ def like_erro():
     
 def like():
     global driver
+    global con_like
     driver.get("https://www.like4like.org/earn-credits.php?feature=youtube")
     con_like = 0
     for s in range(40004000):
